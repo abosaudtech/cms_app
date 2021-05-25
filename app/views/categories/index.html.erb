@@ -1,4 +1,29 @@
 <div class = "categoreis index">
-    <h2> Categoreis </h2>
+    <h2> Categories </h2>
     
-    <% = link_to('Add new Category', '#', :class => 'action new') %>
+    <%= link_to('Add new Category', '#', :class => 'action new') %>
+
+    <table class = "listing">
+        <tr class = "header">
+            <th>#</th>
+            <th>Category</th>
+            <th>Visible</th>
+            <th>Blogs</th>
+            <th>Actions</th>
+        </tr>
+
+        <% @categories.each do |category| %>
+            <tr>
+                <td><%= category.position %></td>
+                <td><%= category.name %></td>
+                <td class = "center"> <%= category.visible ? 'Yes' : 'No'%> </td>
+                <td class = "center"> <%= category.blogs.size %></td>
+                <td class = "actions">
+                    <%= link_to("Show", '#', :class => 'action show') %>
+                    <%= link_to("Edit", '#', :class => 'action edit') %>
+                    <%= link_to("Delete", '#', :class => 'action delete') %>
+                </td>
+            </tr>
+        <% end %>
+    </table>
+</div>
