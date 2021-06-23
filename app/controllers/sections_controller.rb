@@ -22,3 +22,4 @@ class SectionsController < ApplicationController
 
   def destroy
   end
+end

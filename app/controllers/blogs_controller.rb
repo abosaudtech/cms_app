@@ -22,3 +22,4 @@ class BlogsController < ApplicationController
 
   def destroy
   end
+end
